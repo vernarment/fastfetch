@@ -1,0 +1,57 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": null,
+    "display": {
+        "separator": " ",
+        "color": "white",
+    },
+    "modules": [
+        "break",
+        {
+            "type": "custom",
+            "format": "           ◆ 情報 ◆",
+        },
+        {
+            "type": "custom",
+            "format": "       ───────────────────",
+        },
+        {
+            "type": "custom",
+            "format": "       禾 distro            Arch ",
+        },
+        {
+            "type": "shell",
+            "key": "       殻 shell",
+            "format": "{pretty-name>16}",
+        },
+        {
+            "type": "command",
+            "key": "       齢 age",
+            "text": "birth_install=$(stat -c %W /); current=$(date +%s); echo $(( (current - birth_install) / 86400 )) days",
+            "format": "{>18}",
+        },
+        {
+            "type": "command",
+            "key": "       記 memory",
+            "text": "free -m | awk 'NR==2{printf \"%.1f / %.1f GB\",$3/1024,$2/1024}'",
+            "format": "{>15}",
+        },
+        {
+            "type": "command",
+            "key": "       時 uptime",
+            "text": "uptime -p | cut -d ' ' -f 2-",
+            "format": "{>15}",
+        },
+        {
+            "type": "command",
+            "key": "       人 user",
+            "text": "echo $USER",
+            "format": "{>17}",
+        },
+        {
+            "type": "custom",
+            "format": "       ───────────────────",
+        },
+        "break",
+    ],
+}
